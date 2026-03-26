@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: d028969ac0a513e4a86497491064470a
+guid: cd9987ffb392a13469e7b1be8368b554
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 609748218280082232
-    second: lock_icon_0
+      213: 477915903493402997
+    second: tabs_makeup_powder_active_9_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -152,13 +152,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: lock_icon_0
+      name: tabs_makeup_powder_active_9_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 206
-        height: 244
+        width: 110
+        height: 143
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -167,8 +167,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 83bf20126c2467800800000000000000
-      internalID: 609748218280082232
+      spriteID: 571fb3c6bf5e1a600800000000000000
+      internalID: 477915903493402997
       vertices: []
       indices: 
       edges: []
@@ -187,7 +187,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      lock_icon_0: 609748218280082232
+      tabs_makeup_powder_active_9_0: 477915903493402997
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

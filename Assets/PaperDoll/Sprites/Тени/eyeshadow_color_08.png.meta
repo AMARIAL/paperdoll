@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: d028969ac0a513e4a86497491064470a
+guid: aca0f9bac6d794842aa91b8d1d728300
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 609748218280082232
-    second: lock_icon_0
+      213: 1690259320168040865
+    second: eyeshadow_color_08_0
+  - first:
+      213: 5334142278280603087
+    second: eyeshadow_color_08_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -152,13 +155,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: lock_icon_0
+      name: eyeshadow_color_08_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 206
-        height: 244
+        x: 872
+        y: 3410
+        width: 99
+        height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -167,8 +170,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 83bf20126c2467800800000000000000
-      internalID: 609748218280082232
+      spriteID: 1a9c8e475e1057710800000000000000
+      internalID: 1690259320168040865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eyeshadow_color_08_1
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 3410
+        width: 99
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc5ee4ef32ea60a40800000000000000
+      internalID: 5334142278280603087
       vertices: []
       indices: 
       edges: []
@@ -187,7 +212,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      lock_icon_0: 609748218280082232
+      eyeshadow_color_08_0: 1690259320168040865
+      eyeshadow_color_08_1: 5334142278280603087
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

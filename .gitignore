@@ -12,6 +12,16 @@
 /[Uu]ser[Ss]ettings/
 *.log
 
+/.idea/
+/.plastic/
+*.keystore
+# Packed Addressables
+/[Aa]ssets/[Aa]ddressable[Aa]ssets[Dd]ata/*/*.bin*
+# Temporary auto-generated Android Assets
+/[Aa]ssets/[Ss]treamingAssets/aa.meta
+/[Aa]ssets/[Ss]treamingAssets/aa/*
+/anbanBuild_BurstDebugInformation_DoNotShip
+
 # By default unity supports Blender asset imports, *.blend1 blender files do not need to be commited to version control.
 *.blend1
 *.blend1.meta

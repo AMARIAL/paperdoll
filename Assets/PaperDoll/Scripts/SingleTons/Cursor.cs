@@ -2,13 +2,14 @@ using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
 
+public enum CursorState: byte {None, Tap, DragDrop} 
 public class Cursor : MonoBehaviour
 {
-    private enum State: byte {None, Tap, DragDrop} 
+    
     public static Cursor ST {get; private set;}
 
     [SerializeField] private bool isActive = false;
-    [SerializeField] private State currentState = State.None;
+    [SerializeField] private CursorState currentState = CursorState.None;
     
     private Image image;
 
@@ -31,14 +32,14 @@ public class Cursor : MonoBehaviour
 
     public void DoTap (Vector2 pos)
     {
-        Switch(true, State.Tap);
+        Switch(true, CursorState.Tap);
         transform.position = pos;
         transform.DOScale(0.5f, 0.5f).SetLoops(-1, LoopType.Yoyo).SetEase(Ease.InOutSine);
     }
 
     public void DoDragDrop (Transform tr1, Transform tr2)
     {
-        Switch(true, State.DragDrop);
+        Switch(true, CursorState.DragDrop);
         transform.position = tr1.position;
         Sequence seq = DOTween.Sequence();
         seq.Append(transform.DOScale(0.5f, 0.5f).SetLoops(1, LoopType.Yoyo));
@@ -48,7 +49,7 @@ public class Cursor : MonoBehaviour
         seq.SetLoops(-1);
     }
 
-    private void Switch(bool flag = false, State state = State.None)
+    public void Switch(bool flag = false, CursorState state = CursorState.None)
     {
         currentState = state;
         isActive = image.enabled = flag;

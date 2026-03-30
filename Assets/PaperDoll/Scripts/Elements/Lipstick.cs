@@ -9,18 +9,26 @@ public class Lipstick : MonoBehaviour, IPointerDownHandler, ITarget
     public void OnPointerDown(PointerEventData eventData)
     {
         if(!isActive) return;
-        //Book.ST.TakeLipstick(sprite);
-        Hand.ST.Take(transform);
+        Hand.ST.Take(transform, this, true);
         isActive = false;
     }
 
-    public void Action()
+    public void PickUped()
     {
-        throw new System.NotImplementedException();
+        MakeUp.ST.ChangeState(MakeUpState.Lips);
+    }
+    
+    public void Shaked()
+    {
+        Doll.ST.ChangeLips(sprite);
+    }
+    public void Puted()
+    {
+        isActive = true;
     }
 
-    public void Done()
+    public void Moved()
     {
-        throw new System.NotImplementedException();
+        
     }
 }

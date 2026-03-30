@@ -1,5 +1,7 @@
 using UnityEngine;
 
+public enum MakeUpState: byte {None, Cream, Loofah, Shadow, Blush, Lips} 
+    
 public class MakeUp : MonoBehaviour
 {
     public static MakeUp ST {get; private set;}
@@ -9,7 +11,8 @@ public class MakeUp : MonoBehaviour
 
     [SerializeField] private GameObject acne;
     [SerializeField] private GameObject pagesLock;
-    
+
+    private MakeUpState currentState;
     private void Awake()
     {
         if (ST != null)
@@ -27,6 +30,7 @@ public class MakeUp : MonoBehaviour
 
     private void Starter()
     {
+        ChangeState(MakeUpState.None);
         Cursor.ST.DoTap(cream.position);
     }
 
@@ -34,5 +38,15 @@ public class MakeUp : MonoBehaviour
     {
         acne.SetActive(false);
         pagesLock.SetActive(false);
+    }
+
+    public void ChangeState(MakeUpState state)
+    {
+        if(!IsState(state))
+            currentState = state;
+    }
+    public bool IsState(MakeUpState state)
+    {
+        return currentState == state;
     }
 }

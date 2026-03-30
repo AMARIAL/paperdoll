@@ -1,5 +1,7 @@
 public interface ITarget
 {
-    void Action();
-    void Done();
+    void PickUped();
+    void Shaked();
+    void Puted();
+    void Moved();
 }

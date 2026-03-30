@@ -4,32 +4,38 @@ using UnityEngine.EventSystems;
 public class Loofah : MonoBehaviour, IPointerDownHandler, ITarget
 {
 
-    [SerializeField] private bool isActive;
+    private bool isActive;
     private bool isTaked;
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        if(!isActive) return;
-        Hand.ST.Take(transform, this);
+        if(!isActive || isTaked) return;
+        Hand.ST.Take(transform, this, false);
         isActive = false;
     }
 
-    public void Action()
+    public void Activate()
     {
-        if(isTaked)
-        {
-            Doll.ST.Reset();
-        }
-        else
-        {
-            Hand.ST.Shake(Face.ST.transform,true, this);
-            isTaked = true;
-        }
+        isActive = true;
     }
 
-    public void Done()
+    public void PickUped()
     {
+        MakeUp.ST.ChangeState(MakeUpState.Loofah);
+        Hand.ST.Shake(Face.ST.transform,false);
+        isTaked = true;
+    }
+    public void Shaked()
+    {
+        Doll.ST.Reset();
+    }
+    public void Puted()
+    {
+        MakeUp.ST.ChangeState(MakeUpState.None);
         isTaked = false;
+    }
+    public void Moved()
+    {
         isActive = true;
     }
 }

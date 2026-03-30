@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class Cream : MonoBehaviour, IPointerDownHandler
+public class Cream : MonoBehaviour, IPointerDownHandler, ITarget
 {
 
     [SerializeField] private bool isActive;
@@ -10,8 +10,28 @@ public class Cream : MonoBehaviour, IPointerDownHandler
     {
         if(!isActive) return;
         
-        Hand.ST.Take(transform);
+        Hand.ST.Take(transform, this);
         
         isActive = false;
     }
+    
+    public void PickUped()
+    {
+        MakeUp.ST.ChangeState(MakeUpState.Cream);
+    }
+    public void Shaked()
+    {
+        Face.ST.RemoveAcne();
+    }
+    public void Puted()
+    {
+        MakeUp.ST.ChangeState(MakeUpState.None);
+    }
+    public void Moved()
+    {
+        Book.ST.Activate();
+    }
+
+
+
 }

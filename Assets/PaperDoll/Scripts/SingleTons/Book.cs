@@ -10,7 +10,8 @@ public class Book : MonoBehaviour
     
     private GameObject[] marks;
     private bool isActive = true;
-
+    private Loofah loofah;
+    
     private void Awake()
     {
         if (ST != null)
@@ -27,6 +28,8 @@ public class Book : MonoBehaviour
         for (int i = 0; i < bookMarks.childCount; i++)
             marks[i] = bookMarks.GetChild(i).gameObject;
         
+        loofah = FindFirstObjectByType<Loofah>();
+        
         PageActivate(0);
         isActive = false;
     }
@@ -34,6 +37,7 @@ public class Book : MonoBehaviour
     {
         isActive = true;
         pagesLock.SetActive(false);
+        loofah.Activate();
     }
     public void PageActivate(int num)
     {
@@ -56,18 +60,5 @@ public class Book : MonoBehaviour
 
         marks[num*2].gameObject.SetActive(false);
         marks[num*2+1].gameObject.SetActive(true);
-    }
-
-    public void TakeShadow(Sprite sprite)
-    {
-        
-    }
-    public void TakeBlush(Sprite sprite)
-    {
-        
-    }
-    public void TakeLipstick(Sprite sprite)
-    {
-        
     }
 }

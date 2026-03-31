@@ -22,7 +22,7 @@ public class Loofah : MonoBehaviour, IPointerDownHandler, ITarget
     public void PickUped()
     {
         MakeUp.ST.ChangeState(MakeUpState.Loofah);
-        Hand.ST.Shake(Face.ST.transform,false);
+        Hand.ST.Shake(Face.ST.transform.position,false);
         isTaked = true;
     }
     public void Shaked()

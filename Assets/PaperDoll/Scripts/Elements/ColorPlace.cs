@@ -11,7 +11,7 @@ public class ColorPlace : MonoBehaviour, IPointerDownHandler
         if(!isActive) return;
         if (Hand.ST.taken)
         
-            Hand.ST.Shake(transform, true);
+            Hand.ST.Shake(transform.position + Vector3.down * 0.8f, true);
         else
             Book.ST.brush.TakeBrush(transform);
         

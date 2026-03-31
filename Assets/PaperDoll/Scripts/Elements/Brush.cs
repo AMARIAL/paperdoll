@@ -28,7 +28,7 @@ public class Brush : MonoBehaviour, IPointerDownHandler, ITarget
     {
         MakeUp.ST.ChangeState(type == BrushType.Blush ? MakeUpState.Blush : MakeUpState.Shadow);
         if(colorTransform)
-            Hand.ST.Shake(colorTransform, true);
+            Hand.ST.Shake(colorTransform.position + Vector3.down * 0.8f, true);
     }
 
     public void Shaked()

@@ -27,19 +27,19 @@ public class Face : MonoBehaviour, IPointerDownHandler
         
         if (MakeUp.ST.IsState(MakeUpState.Cream))
         {
-            Hand.ST.Shake(transform, false);
+            Hand.ST.Shake(transform.position, false);
         }
         else if (MakeUp.ST.IsState(MakeUpState.Lips))
         {
-            Hand.ST.Shake(lips, false);
+            Hand.ST.Shake(lips.position, false);
         }
         else if (MakeUp.ST.IsState(MakeUpState.Shadow))
         {
-            Hand.ST.Shake(shadow, false);
+            Hand.ST.Shake(shadow.position, false);
         }
         else if (MakeUp.ST.IsState(MakeUpState.Blush))
         {
-            Hand.ST.Shake(blush, false);
+            Hand.ST.Shake(blush.position, false);
         }
     }
 

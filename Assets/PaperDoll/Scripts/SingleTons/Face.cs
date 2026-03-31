@@ -33,6 +33,14 @@ public class Face : MonoBehaviour, IPointerDownHandler
         {
             Hand.ST.Shake(lips, false);
         }
+        else if (MakeUp.ST.IsState(MakeUpState.Shadow))
+        {
+            Hand.ST.Shake(shadow, false);
+        }
+        else if (MakeUp.ST.IsState(MakeUpState.Blush))
+        {
+            Hand.ST.Shake(blush, false);
+        }
     }
 
     public void RemoveAcne()

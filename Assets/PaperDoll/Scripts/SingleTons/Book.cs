@@ -6,12 +6,14 @@ public class Book : MonoBehaviour
 
     [SerializeField] private GameObject pagesLock;
     [SerializeField] private Transform bookMarks;
+    [SerializeField] private Brush[] brushes = new Brush[2];
     [SerializeField] private GameObject[] pages = new GameObject[3];
     
     private GameObject[] marks;
     private bool isActive = true;
     private Loofah loofah;
-    
+    public Brush brush;
+    public ITarget brushTarget;
     private void Awake()
     {
         if (ST != null)
@@ -49,6 +51,12 @@ public class Book : MonoBehaviour
         }
         pages[num].SetActive(true);
         BookMarksActivate(num);
+
+        if (num >= 0 && num < 2)
+        {
+            brush = brushes[num];
+            brushTarget = brush.GetComponent<ITarget>();
+        }
     }
 
     private void BookMarksActivate(int num)

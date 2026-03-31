@@ -204,11 +204,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 39020782}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe34e03351e97214abcc31ee19825bf1, type: 3}
+  m_Script: {fileID: 11500000, guid: 9d426247d5e14864abf205b37359c2a2, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Shadow
+  m_EditorClassIdentifier: Assembly-CSharp::Blush
   isActive: 1
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: 4ffddc408ae31f94782408c65a8175f5, type: 3}
 --- !u!1 &113954627
 GameObject:
   m_ObjectHideFlags: 0
@@ -220,6 +220,7 @@ GameObject:
   - component: {fileID: 113954628}
   - component: {fileID: 113954630}
   - component: {fileID: 113954629}
+  - component: {fileID: 113954631}
   m_Layer: 5
   m_Name: Brush
   m_TagString: Untagged
@@ -284,6 +285,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 113954627}
   m_CullTransparentMesh: 1
+--- !u!114 &113954631
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 113954627}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5ed1ee35539edb4ca955cb7d07068e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Brush
+  isActive: 1
+  type: 0
+  sprite: {fileID: 21300000, guid: c69a4d6b2e012d44eaee6118b2bacabb, type: 3}
 --- !u!1 &122665255
 GameObject:
   m_ObjectHideFlags: 0
@@ -436,7 +452,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Blush
   isActive: 1
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: fb4f5f24c712e3b489a5710b144d6996, type: 3}
 --- !u!1 &246380762
 GameObject:
   m_ObjectHideFlags: 0
@@ -734,7 +750,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Blush
   isActive: 1
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: c69a4d6b2e012d44eaee6118b2bacabb, type: 3}
 --- !u!1 &373315905
 GameObject:
   m_ObjectHideFlags: 0
@@ -824,7 +840,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Blush
   isActive: 1
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: 1ffbe7fdd2f5204438af7f4ff90fe3f6, type: 3}
 --- !u!1 &384139392
 GameObject:
   m_ObjectHideFlags: 0
@@ -1323,7 +1339,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Blush
   isActive: 1
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: af79143eaf3b75847ba1212e6e1ac5a7, type: 3}
 --- !u!1 &542837209
 GameObject:
   m_ObjectHideFlags: 0
@@ -1876,6 +1892,7 @@ GameObject:
   - component: {fileID: 678309410}
   - component: {fileID: 678309412}
   - component: {fileID: 678309411}
+  - component: {fileID: 678309413}
   m_Layer: 5
   m_Name: EyeBrush
   m_TagString: Untagged
@@ -1940,6 +1957,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 678309409}
   m_CullTransparentMesh: 1
+--- !u!114 &678309413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 678309409}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5ed1ee35539edb4ca955cb7d07068e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Brush
+  isActive: 1
+  type: 1
+  sprite: {fileID: 21300000, guid: d5692963aa325e940a53ac90f33cbc4d, type: 3}
 --- !u!1 &697833490
 GameObject:
   m_ObjectHideFlags: 0
@@ -2025,11 +2057,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 697833490}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe34e03351e97214abcc31ee19825bf1, type: 3}
+  m_Script: {fileID: 11500000, guid: 9d426247d5e14864abf205b37359c2a2, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Shadow
+  m_EditorClassIdentifier: Assembly-CSharp::Blush
   isActive: 1
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: d5692963aa325e940a53ac90f33cbc4d, type: 3}
 --- !u!1 &703678046
 GameObject:
   m_ObjectHideFlags: 0
@@ -2115,11 +2147,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 703678046}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe34e03351e97214abcc31ee19825bf1, type: 3}
+  m_Script: {fileID: 11500000, guid: 9d426247d5e14864abf205b37359c2a2, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Shadow
+  m_EditorClassIdentifier: Assembly-CSharp::Blush
   isActive: 1
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: cf08fc1badf366846a82010f713ffd5d, type: 3}
 --- !u!1 &705993505
 GameObject:
   m_ObjectHideFlags: 0
@@ -2340,8 +2372,8 @@ RectTransform:
   m_Children:
   - {fileID: 888455957}
   - {fileID: 926956283}
-  - {fileID: 946028102}
   - {fileID: 1286406452}
+  - {fileID: 946028102}
   m_Father: {fileID: 2080775105}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
@@ -2451,6 +2483,7 @@ MonoBehaviour:
   loofah: {fileID: 1949818611}
   acne: {fileID: 888455956}
   pagesLock: {fileID: 1934570005}
+  currentState: 0
 --- !u!1 &781931551
 GameObject:
   m_ObjectHideFlags: 0
@@ -2715,11 +2748,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 813566386}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe34e03351e97214abcc31ee19825bf1, type: 3}
+  m_Script: {fileID: 11500000, guid: 9d426247d5e14864abf205b37359c2a2, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Shadow
+  m_EditorClassIdentifier: Assembly-CSharp::Blush
   isActive: 1
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: aca0f9bac6d794842aa91b8d1d728300, type: 3}
 --- !u!1 &821845910
 GameObject:
   m_ObjectHideFlags: 0
@@ -2805,11 +2838,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 821845910}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe34e03351e97214abcc31ee19825bf1, type: 3}
+  m_Script: {fileID: 11500000, guid: 9d426247d5e14864abf205b37359c2a2, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Shadow
+  m_EditorClassIdentifier: Assembly-CSharp::Blush
   isActive: 1
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: 2117c52a36a8a49469e7f01654bc96d3, type: 3}
 --- !u!1 &878484521
 GameObject:
   m_ObjectHideFlags: 0
@@ -3372,7 +3405,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -56}
+  m_AnchoredPosition: {x: 0, y: -307.8}
   m_SizeDelta: {x: 105.8, y: 66.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &952104927
@@ -3539,7 +3572,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Blush
   isActive: 1
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: 3a182fdacedc8614c80c04c297641f6b, type: 3}
 --- !u!1 &990258252
 GameObject:
   m_ObjectHideFlags: 0
@@ -4097,7 +4130,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Blush
   isActive: 1
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: 12d76ee042159c142a85f0348bc0ffdd, type: 3}
 --- !u!1 &1216510951
 GameObject:
   m_ObjectHideFlags: 0
@@ -4187,7 +4220,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Blush
   isActive: 1
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: 3f97ef0f10c84e548b0df9b0ef02f72e, type: 3}
 --- !u!1 &1234455079
 GameObject:
   m_ObjectHideFlags: 0
@@ -4371,7 +4404,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 51}
+  m_AnchoredPosition: {x: 0, y: -188}
   m_SizeDelta: {x: 105.8, y: 66.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1467397487
@@ -4463,7 +4496,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Blush
   isActive: 1
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: 0029ac6fcb4d8404c96d76339e58e57b, type: 3}
 --- !u!1 &1470179598
 GameObject:
   m_ObjectHideFlags: 0
@@ -4559,10 +4592,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Book
   pagesLock: {fileID: 1934570005}
   bookMarks: {fileID: 1102810417}
+  brushes:
+  - {fileID: 678309413}
+  - {fileID: 113954631}
   pages:
   - {fileID: 705993505}
   - {fileID: 1944596216}
   - {fileID: 396585546}
+  brush: {fileID: 0}
 --- !u!1 &1476407558
 GameObject:
   m_ObjectHideFlags: 0
@@ -4652,7 +4689,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Blush
   isActive: 1
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: 9e3f1d2af96d1ff4caed7e9e7cccedfe, type: 3}
 --- !u!1 &1479182079
 GameObject:
   m_ObjectHideFlags: 0
@@ -4738,11 +4775,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1479182079}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe34e03351e97214abcc31ee19825bf1, type: 3}
+  m_Script: {fileID: 11500000, guid: 9d426247d5e14864abf205b37359c2a2, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Shadow
+  m_EditorClassIdentifier: Assembly-CSharp::Blush
   isActive: 1
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: 1d0d8e4a67d578540bb06811991bad14, type: 3}
 --- !u!1 &1482401803
 GameObject:
   m_ObjectHideFlags: 0
@@ -5251,11 +5288,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1765291706}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe34e03351e97214abcc31ee19825bf1, type: 3}
+  m_Script: {fileID: 11500000, guid: 9d426247d5e14864abf205b37359c2a2, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Shadow
+  m_EditorClassIdentifier: Assembly-CSharp::Blush
   isActive: 1
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: 7c37921f670b2144a989af0bf322c73c, type: 3}
 --- !u!1 &1804251317
 GameObject:
   m_ObjectHideFlags: 0
@@ -5580,11 +5617,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1880089506}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe34e03351e97214abcc31ee19825bf1, type: 3}
+  m_Script: {fileID: 11500000, guid: 9d426247d5e14864abf205b37359c2a2, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Shadow
+  m_EditorClassIdentifier: Assembly-CSharp::Blush
   isActive: 1
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: cdabfc0b55601744cb81b9e75e406816, type: 3}
 --- !u!1 &1888293623
 GameObject:
   m_ObjectHideFlags: 0
@@ -6249,11 +6286,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 2076895250}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe34e03351e97214abcc31ee19825bf1, type: 3}
+  m_Script: {fileID: 11500000, guid: 9d426247d5e14864abf205b37359c2a2, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Shadow
+  m_EditorClassIdentifier: Assembly-CSharp::Blush
   isActive: 1
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: 1b9bce199a1b4a1448ea1d4626acbece, type: 3}
 --- !u!1 &2080775104
 GameObject:
   m_ObjectHideFlags: 0

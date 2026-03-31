@@ -12,7 +12,7 @@ public class MakeUp : MonoBehaviour
     [SerializeField] private GameObject acne;
     [SerializeField] private GameObject pagesLock;
 
-    private MakeUpState currentState;
+    [SerializeField] private MakeUpState currentState;
     private void Awake()
     {
         if (ST != null)
@@ -25,7 +25,8 @@ public class MakeUp : MonoBehaviour
 
     private void Start()
     {
-        Invoke(nameof(Starter), 0.1f);
+        Screen.sleepTimeout = SleepTimeout.NeverSleep; // отключает затухание экрана
+        Invoke(nameof(Starter), 0.05f);
     }
 
     private void Starter()

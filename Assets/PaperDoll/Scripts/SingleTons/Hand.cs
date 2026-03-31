@@ -33,6 +33,12 @@ public class Hand : MonoBehaviour
         image = GetComponent<Image>();
         transform.position = basePosition; 
     }
+
+    private void Start()
+    {
+        Sequence seq = DOTween.Sequence();
+    }
+
     public void Take (Transform tf, ITarget target, bool isZeroPosition = true)
     {
         Cursor.ST.Switch();

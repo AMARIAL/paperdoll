@@ -37,20 +37,28 @@ public class Cursor : MonoBehaviour
         transform.DOScale(0.5f, 0.5f).SetLoops(-1, LoopType.Yoyo).SetEase(Ease.InOutSine);
     }
 
-    public void DoDragDrop (Transform tr1, Transform tr2)
+    public void DoDragDrop(Transform tr1, Transform tr2)
     {
         Switch(true, CursorState.DragDrop);
+        PlayCycle(tr1, tr2);
+    }
+
+    private void PlayCycle(Transform tr1, Transform tr2)
+    {
         transform.position = tr1.position;
+        transform.DOKill();
         Sequence seq = DOTween.Sequence();
         seq.Append(transform.DOScale(0.5f, 0.5f).SetLoops(1, LoopType.Yoyo));
-        seq.Append(transform.DOMove(tr2.position, 1f).SetSpeedBased(true).SetEase(Ease.Linear));
-        seq.Append(transform.DOScale(0.6f, 0.5f).SetLoops(1, LoopType.Yoyo));
-        seq.AppendInterval(1f);
-        seq.SetLoops(-1);
+        seq.Append(transform.DOMove(tr2.position, 1f).SetSpeedBased(true).SetEase(Ease.Linear)); 
+        seq.Append(transform.DOScale(0.6f, 0.5f).SetLoops(1, LoopType.Yoyo).OnComplete(() =>
+        {
+            PlayCycle(tr1, tr2);
+        }));
     }
 
     public void Switch(bool flag = false, CursorState state = CursorState.None)
     {
+        transform.DOKill();
         currentState = state;
         isActive = image.enabled = flag;
     }

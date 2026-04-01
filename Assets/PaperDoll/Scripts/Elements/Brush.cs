@@ -49,6 +49,7 @@ public class Brush : MonoBehaviour, IPointerDownHandler, ITarget
 
     public void Puted()
     {
+        MakeUp.ST.ChangeState(MakeUpState.None);
         colorTransform = null;
     }
 

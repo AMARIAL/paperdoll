@@ -9,7 +9,7 @@ public class Loofah : MonoBehaviour, IPointerDownHandler, ITarget
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        if(!isActive || isTaked) return;
+        if(!isActive || isTaked || !MakeUp.ST.IsState(MakeUpState.None)) return;
         Hand.ST.Take(transform, this, false);
         isActive = false;
     }

@@ -5,11 +5,11 @@ using UnityEngine.UI;
 public class Face : MonoBehaviour, IPointerDownHandler
 {
     public static Face ST {get; private set;}
-
-    [SerializeField] private Transform lips;
-    [SerializeField] private Transform shadow;
-    [SerializeField] private Transform blush;
+    
     [SerializeField] private Image acne;
+    [SerializeField] private float shadowOffset;
+    [SerializeField] private float blushOffset;
+    [SerializeField] private float lipsOffset;
     
     private void Awake()
     {
@@ -23,24 +23,23 @@ public class Face : MonoBehaviour, IPointerDownHandler
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        if(!Hand.ST.taken) return;
+        if(!Hand.ST.taken || MakeUp.ST.IsState(MakeUpState.None)) return;
+
+        Vector3 pos = transform.position;
         
-        if (MakeUp.ST.IsState(MakeUpState.Cream))
+        if (MakeUp.ST.IsState(MakeUpState.Lips))
         {
-            Hand.ST.Shake(transform.position, false);
-        }
-        else if (MakeUp.ST.IsState(MakeUpState.Lips))
-        {
-            Hand.ST.Shake(lips.position, false);
+            pos += Vector3.down * lipsOffset;
         }
         else if (MakeUp.ST.IsState(MakeUpState.Shadow))
         {
-            Hand.ST.Shake(shadow.position, false);
+            pos += Vector3.down * shadowOffset;
         }
         else if (MakeUp.ST.IsState(MakeUpState.Blush))
         {
-            Hand.ST.Shake(blush.position, false);
+            pos += Vector3.down * blushOffset;
         }
+        Hand.ST.Shake(pos, false);
     }
 
     public void RemoveAcne()

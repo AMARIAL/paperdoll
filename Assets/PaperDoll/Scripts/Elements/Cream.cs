@@ -18,6 +18,7 @@ public class Cream : MonoBehaviour, IPointerDownHandler, ITarget
     public void PickUped()
     {
         MakeUp.ST.ChangeState(MakeUpState.Cream);
+        Cursor.ST.DoDragDrop(transform, Face.ST.transform);
     }
     public void Shaked()
     {

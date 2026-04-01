@@ -18,7 +18,7 @@ public class ColorPlace : MonoBehaviour, IPointerDownHandler
         Book.ST.brush.ChangeColor(sprite);
         
         isActive = false;
-        Invoke(nameof(Activate), 2f);
+        Invoke(nameof(Activate), 1f);
     }
 
     private void Activate()

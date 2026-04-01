@@ -43,7 +43,7 @@ public class Book : MonoBehaviour
     }
     public void PageActivate(int num)
     {
-        if(!isActive) return;
+        if(!isActive || !MakeUp.ST.IsState(MakeUpState.None)) return;
         
         foreach (var page in pages)
         {

@@ -12,14 +12,14 @@ public class Hand : MonoBehaviour
     [SerializeField] private Sprite handOff;
     [SerializeField] private Sprite handOn;
     
-    [HideInInspector] public Transform taken;
+    public Transform taken;
+    public Transform takenNew;
     private ITarget takenTarget;
     private Vector3 takenPosition;
     private Transform takenParent;
-    [HideInInspector] public Transform takenNew;
     private ITarget takenTargetNew;
     private Sequence seq;
-    
+    private bool isBusy;
     private Image image;
 
     private void Awake()
@@ -33,16 +33,14 @@ public class Hand : MonoBehaviour
         image = GetComponent<Image>();
         transform.position = basePosition; 
     }
-
-    private void Start()
-    {
-        seq = DOTween.Sequence();
-    }
-
     public void Take (Transform tf, ITarget target, bool isZeroPosition = true)
     {
         Cursor.ST.Switch();
         
+        if(isBusy) return;
+        
+        seq = DOTween.Sequence();
+        isBusy = true;
         if (taken)
         {
             takenNew = tf;
@@ -64,15 +62,20 @@ public class Hand : MonoBehaviour
     public void Shake(Vector3 shakePlace, bool isZeroPosition)
     {
         Cursor.ST.Switch();
+        if(isBusy) return;
+        seq = DOTween.Sequence();
+        isBusy = true;
         seq.Append(transform.DOMove(shakePlace, 1f).SetEase(Ease.OutCubic).OnComplete(()=>Action(isZeroPosition)));
     }
     private void PickUp(bool isZeroPosition = true)
     {
         taken.SetParent(transform);
         image.sprite = handOn;
-        takenTarget?.PickUped();
         if (isZeroPosition)
-            seq.Append(transform.DOMove(zeroPosition, 1f).SetEase(Ease.OutCubic));
+            seq.Append(transform.DOMove(zeroPosition, 1f).SetEase(Ease.OutCubic).OnComplete(()=>{isBusy = false;}));
+        else
+            isBusy = false;
+        takenTarget?.PickUped();
     }
     private void Put (bool isChangeTarget = false, bool isZeroPosition = true)
     {
@@ -82,11 +85,15 @@ public class Hand : MonoBehaviour
         takenPosition = Vector3.zero;
         takenParent = null;
         image.sprite = handOff;
+        isBusy = false;
         takenTarget?.Puted();
         if(isChangeTarget)
             Take(takenNew, takenTargetNew, isZeroPosition);
         else
-            seq.Append(transform.DOMove(basePosition, 1f).SetEase(Ease.OutCubic).OnComplete(() => takenTarget?.Moved()));
+            seq.Append(transform.DOMove(basePosition, 1f).SetEase(Ease.OutCubic).OnComplete(() =>
+            {
+                takenTarget?.Moved();
+            }));
     }
     
     private void Action(bool isZeroPosition)
@@ -106,6 +113,8 @@ public class Hand : MonoBehaviour
             {
                 if (!isZeroPosition)
                     Put();
+                else
+                    isBusy = false;
             });
         }));
     }

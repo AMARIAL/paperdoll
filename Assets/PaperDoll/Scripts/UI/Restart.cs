@@ -2,15 +2,11 @@ using DG.Tweening;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class UI : MonoBehaviour
+public class Restart : MonoBehaviour
 {
-    public void Restart()
+    public void RestartAction()
     {
         DOTween.KillAll();
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-    }
-    public void Done()
-    {
-        Debug.Log ("Готово!");
     }
 }

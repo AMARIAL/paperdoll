@@ -12,7 +12,7 @@ public class Cursor : MonoBehaviour
     [SerializeField] private CursorState currentState = CursorState.None;
     
     private Image image;
-
+    private Sequence seq;
     private void Awake()
     {
         if (ST != null)
@@ -47,9 +47,9 @@ public class Cursor : MonoBehaviour
     {
         transform.position = tr1.position;
         transform.DOKill();
-        Sequence seq = DOTween.Sequence();
+        seq = DOTween.Sequence();
         seq.Append(transform.DOScale(0.5f, 0.5f).SetLoops(1, LoopType.Yoyo));
-        seq.Append(transform.DOMove(tr2.position, 1f).SetSpeedBased(true).SetEase(Ease.Linear)); 
+        seq.Append(transform.DOMove(tr2.position, 1f).SetEase(Ease.Linear)); 
         seq.Append(transform.DOScale(0.6f, 0.5f).SetLoops(1, LoopType.Yoyo).OnComplete(() =>
         {
             PlayCycle(tr1, tr2);

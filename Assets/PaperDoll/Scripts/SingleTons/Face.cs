@@ -10,6 +10,8 @@ public class Face : MonoBehaviour, IPointerDownHandler
     [SerializeField] private float shadowOffset;
     [SerializeField] private float blushOffset;
     [SerializeField] private float lipsOffset;
+
+    [HideInInspector] public RectTransform faceRect;
     
     private void Awake()
     {
@@ -19,6 +21,7 @@ public class Face : MonoBehaviour, IPointerDownHandler
             return;
         }
         ST = this;
+        faceRect = GetComponent<RectTransform>();
     }
 
     public void OnPointerDown(PointerEventData eventData)

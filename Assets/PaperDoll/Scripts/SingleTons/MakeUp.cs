@@ -7,10 +7,6 @@ public class MakeUp : MonoBehaviour
     public static MakeUp ST {get; private set;}
 
     [SerializeField] private Transform cream;
-    [SerializeField] private Transform loofah;
-
-    [SerializeField] private GameObject acne;
-    [SerializeField] private GameObject pagesLock;
 
     [SerializeField] private MakeUpState currentState;
     private void Awake()
@@ -33,12 +29,6 @@ public class MakeUp : MonoBehaviour
     {
         ChangeState(MakeUpState.None);
         Cursor.ST.DoTap(cream.position);
-    }
-
-    public void RemoveAcne()
-    {
-        acne.SetActive(false);
-        pagesLock.SetActive(false);
     }
 
     public void ChangeState(MakeUpState state)

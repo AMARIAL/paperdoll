@@ -12,6 +12,7 @@ public class Book : MonoBehaviour
     private GameObject[] marks;
     private bool isActive = true;
     private Loofah loofah;
+    private Done done;
     public Brush brush;
     public ITarget brushTarget;
     private void Awake()
@@ -31,6 +32,7 @@ public class Book : MonoBehaviour
             marks[i] = bookMarks.GetChild(i).gameObject;
         
         loofah = FindFirstObjectByType<Loofah>();
+        done = FindFirstObjectByType<Done>();
         
         PageActivate(0);
         isActive = false;
@@ -40,6 +42,7 @@ public class Book : MonoBehaviour
         isActive = true;
         pagesLock.SetActive(false);
         loofah.Activate();
+        done.Activate();
     }
     public void PageActivate(int num)
     {
